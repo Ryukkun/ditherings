@@ -1,11 +1,15 @@
 import cv2
 import time
 import numpy as np
+import pathlib
+import os
 
-target_path = "/Users/yuma/Downloads/F1HNcukaMAA4QJC.jpg"
+os.chdir(pathlib.Path(__file__).parent)
+
+target_path = "../target.jpg"
 target:np.ndarray = cv2.imread(target_path)
 
-colors = np.array(((0,0,0), (255,0,0), (0,255,0), (0,0,255), (255,255,255)),dtype=np.int32)
+colors = np.array(((0,0,0), (255,0,0),(255,255,0),(255,0,255), (0,255,0),(0,255,255), (0,0,255), (255,255,255)),dtype=np.int32)
 
 def euclidean(tcolor:np.ndarray) -> np.ndarray:
     return colors[((colors-tcolor)**2).sum(axis=1).argmin()]
@@ -35,6 +39,6 @@ for i, row in enumerate(target_copy):
             target_copy[i+1][ii] = target_copy[i+1][ii] + diffe*0.3125
             if hasbehind:
                 target_copy[i+1][ii-1] = target_copy[i+1][ii-1] + diffe*0.1865
-# 28 ~ 37sec
+# 65
 print(time.perf_counter()-start)
-cv2.imwrite('./python.png', target)
+cv2.imwrite('./out.png', target)
