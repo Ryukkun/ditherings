@@ -606,21 +606,21 @@ __pyx_v_diffe = __pyx_t_6;
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">40</span>:             for iiii in range(3):</pre>
 <pre class='cython code score-0 '>      for (__pyx_t_15 = 0; __pyx_t_15 &lt; 3; __pyx_t_15+=1) {
         __pyx_v_iiii = __pyx_t_15;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">41</span>:                 target[i,ii,iiii] = colors[color_index,iiii]</pre>
-<pre class='cython code score-0 '>        __pyx_t_21 = __pyx_v_color_index;
-        __pyx_t_20 = __pyx_v_iiii;
-        __pyx_t_19 = __pyx_v_i;
-        __pyx_t_18 = __pyx_v_ii;
-        __pyx_t_17 = __pyx_v_iiii;
-        *__Pyx_BufPtrStrided3d(unsigned char *, __pyx_pybuffernd_target.rcbuffer-&gt;pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_target.diminfo[0].strides, __pyx_t_18, __pyx_pybuffernd_target.diminfo[1].strides, __pyx_t_17, __pyx_pybuffernd_target.diminfo[2].strides) = (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_21 * __pyx_v_colors.strides[0]) ) + __pyx_t_20 * __pyx_v_colors.strides[1]) )));
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">42</span>:                 diffe[iiii] = target_copy[i,ii,iiii] - colors[color_index,iiii]</pre>
-<pre class='cython code score-0 '>        __pyx_t_20 = __pyx_v_i;
-        __pyx_t_21 = __pyx_v_ii;
-        __pyx_t_17 = __pyx_v_iiii;
-        __pyx_t_18 = __pyx_v_color_index;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">41</span>:                 diffe[iiii] = target_copy[i,ii,iiii] - colors[color_index,iiii]</pre>
+<pre class='cython code score-0 '>        __pyx_t_21 = __pyx_v_i;
+        __pyx_t_20 = __pyx_v_ii;
         __pyx_t_19 = __pyx_v_iiii;
+        __pyx_t_18 = __pyx_v_color_index;
+        __pyx_t_17 = __pyx_v_iiii;
         __pyx_t_23 = __pyx_v_iiii;
-        *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_23 * __pyx_v_diffe.strides[0]) )) = ((*((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_20 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[2]) ))) - (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_18 * __pyx_v_colors.strides[0]) ) + __pyx_t_19 * __pyx_v_colors.strides[1]) ))));
+        *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_23 * __pyx_v_diffe.strides[0]) )) = ((*((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_21 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_20 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_19 * __pyx_v_target_copy.strides[2]) ))) - (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_18 * __pyx_v_colors.strides[0]) ) + __pyx_t_17 * __pyx_v_colors.strides[1]) ))));
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">42</span>:                 target[i,ii,iiii] = colors[color_index,iiii]</pre>
+<pre class='cython code score-0 '>        __pyx_t_17 = __pyx_v_color_index;
+        __pyx_t_18 = __pyx_v_iiii;
+        __pyx_t_19 = __pyx_v_i;
+        __pyx_t_20 = __pyx_v_ii;
+        __pyx_t_21 = __pyx_v_iiii;
+        *__Pyx_BufPtrStrided3d(unsigned char *, __pyx_pybuffernd_target.rcbuffer-&gt;pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_target.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_target.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_target.diminfo[2].strides) = (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_17 * __pyx_v_colors.strides[0]) ) + __pyx_t_18 * __pyx_v_colors.strides[1]) )));
       }
 </pre><pre class="cython line score-0">&#xA0;<span class="">43</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">44</span>: </pre>
@@ -633,11 +633,11 @@ __pyx_v_diffe = __pyx_t_6;
 <pre class='cython code score-0 '>        for (__pyx_t_15 = 0; __pyx_t_15 &lt; 3; __pyx_t_15+=1) {
           __pyx_v_iii = __pyx_t_15;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">47</span>:                     target_copy[i,nii,iii] += &lt;short&gt;(diffe[iii] * 0.4375)</pre>
-<pre class='cython code score-0 '>          __pyx_t_19 = __pyx_v_iii;
-          __pyx_t_18 = __pyx_v_i;
-          __pyx_t_17 = __pyx_v_nii;
-          __pyx_t_21 = __pyx_v_iii;
-          *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_18 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_19 * __pyx_v_diffe.strides[0]) ))) * 0.4375));
+<pre class='cython code score-0 '>          __pyx_t_18 = __pyx_v_iii;
+          __pyx_t_17 = __pyx_v_i;
+          __pyx_t_21 = __pyx_v_nii;
+          __pyx_t_20 = __pyx_v_iii;
+          *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_17 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_20 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_18 * __pyx_v_diffe.strides[0]) ))) * 0.4375));
         }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">48</span>:                 if ni &lt; col_count:</pre>
 <pre class='cython code score-0 '>        __pyx_t_22 = ((__pyx_v_ni &lt; __pyx_v_col_count) != 0);
@@ -648,11 +648,11 @@ __pyx_v_diffe = __pyx_t_6;
 <pre class='cython code score-0 '>          for (__pyx_t_15 = 0; __pyx_t_15 &lt; 3; __pyx_t_15+=1) {
             __pyx_v_iii = __pyx_t_15;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">50</span>:                         target_copy[ni,nii,iii] += &lt;short&gt;(diffe[iii] * 0.0625)</pre>
-<pre class='cython code score-0 '>            __pyx_t_19 = __pyx_v_iii;
-            __pyx_t_21 = __pyx_v_ni;
-            __pyx_t_17 = __pyx_v_nii;
-            __pyx_t_18 = __pyx_v_iii;
-            *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_21 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_18 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_19 * __pyx_v_diffe.strides[0]) ))) * 0.0625));
+<pre class='cython code score-0 '>            __pyx_t_18 = __pyx_v_iii;
+            __pyx_t_20 = __pyx_v_ni;
+            __pyx_t_21 = __pyx_v_nii;
+            __pyx_t_17 = __pyx_v_iii;
+            *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_20 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_18 * __pyx_v_diffe.strides[0]) ))) * 0.0625));
           }
 </pre><pre class="cython line score-0">&#xA0;<span class="">51</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">52</span>:             if ni &lt; col_count:</pre>
@@ -666,11 +666,11 @@ __pyx_v_diffe = __pyx_t_6;
 <pre class='cython code score-0 '>        for (__pyx_t_15 = 0; __pyx_t_15 &lt; 3; __pyx_t_15+=1) {
           __pyx_v_iii = __pyx_t_15;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">54</span>:                     target_copy[ni,ii,iii] += &lt;short&gt;(diffe[iii] * 0.3125)</pre>
-<pre class='cython code score-0 '>          __pyx_t_19 = __pyx_v_iii;
-          __pyx_t_18 = __pyx_v_ni;
-          __pyx_t_17 = __pyx_v_ii;
-          __pyx_t_21 = __pyx_v_iii;
-          *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_18 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_19 * __pyx_v_diffe.strides[0]) ))) * 0.3125));
+<pre class='cython code score-0 '>          __pyx_t_18 = __pyx_v_iii;
+          __pyx_t_17 = __pyx_v_ni;
+          __pyx_t_21 = __pyx_v_ii;
+          __pyx_t_20 = __pyx_v_iii;
+          *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_17 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_20 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_18 * __pyx_v_diffe.strides[0]) ))) * 0.3125));
         }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">55</span>:                 if 0 &lt;= nni:</pre>
 <pre class='cython code score-0 '>        __pyx_t_22 = ((0 &lt;= __pyx_v_nni) != 0);
@@ -681,11 +681,11 @@ __pyx_v_diffe = __pyx_t_6;
 <pre class='cython code score-0 '>          for (__pyx_t_15 = 0; __pyx_t_15 &lt; 3; __pyx_t_15+=1) {
             __pyx_v_iii = __pyx_t_15;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">57</span>:                         target_copy[ni,nni,iii] += &lt;short&gt;(diffe[iii] * 0.1865)</pre>
-<pre class='cython code score-0 '>            __pyx_t_19 = __pyx_v_iii;
-            __pyx_t_21 = __pyx_v_ni;
-            __pyx_t_17 = __pyx_v_nni;
-            __pyx_t_18 = __pyx_v_iii;
-            *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_21 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_18 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_19 * __pyx_v_diffe.strides[0]) ))) * 0.1865));
+<pre class='cython code score-0 '>            __pyx_t_18 = __pyx_v_iii;
+            __pyx_t_20 = __pyx_v_ni;
+            __pyx_t_21 = __pyx_v_nni;
+            __pyx_t_17 = __pyx_v_iii;
+            *((short *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target_copy.data + __pyx_t_20 * __pyx_v_target_copy.strides[0]) ) + __pyx_t_21 * __pyx_v_target_copy.strides[1]) ) + __pyx_t_17 * __pyx_v_target_copy.strides[2]) )) += ((short)((*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_18 * __pyx_v_diffe.strides[0]) ))) * 0.1865));
           }
 </pre><pre class="cython line score-0">&#xA0;<span class="">58</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">59</span>:     return target</pre>
