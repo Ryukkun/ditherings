@@ -38,7 +38,10 @@ cpdef inline to_dithe(cnp.ndarray[unsigned char, ndim=3] target, unsigned char[:
                     color_index = iii
 
             for iiii in range(3):
-                diffe[iiii] = target_copy[i,ii,iiii] - colors[color_index,iiii]
+                if 0 < target_copy[i,ii,iiii]:
+                    diffe[iiii] = target_copy[i,ii,iiii] - colors[color_index,iiii]
+                else:
+                    diffe[iiii] = target_copy[i,ii,iiii] + colors[color_index,iiii]
                 target[i,ii,iiii] = colors[color_index,iiii]
 
 

@@ -14,15 +14,14 @@ cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
 
 
     for i in range(target.shape[0]):
-        diffe[0] = 0
-        diffe[1] = 0
-        diffe[2] = 0
+        diffe[0] = diffe[1] = diffe[2] = 0
 
         for ii in range(target.shape[1]):
 
             last_total = 2000000
             for iiii in range(3):
                 res[iiii] = target[i,ii,iiii] + diffe[iiii]
+
 
             for iii in range(colors.shape[0]):
                 total = 0
@@ -36,9 +35,11 @@ cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
 
             for iiii in range(3):
                 target[i,ii,iiii] = colors[color_index,iiii]
-                diffe[iiii] = res[iiii] - colors[color_index,iiii]
+                if 0 < res[iiii]:
+                    diffe[iiii] = res[iiii] - colors[color_index,iiii]
+                else:
+                    diffe[iiii] = res[iiii] + colors[color_index,iiii]
                 
-
 
 
     return target

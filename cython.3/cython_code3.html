@@ -492,28 +492,26 @@ static PyObject *__pyx_pf_12cython_code3_to_dithe(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_7 = __pyx_t_6;
   for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">17</span>:         diffe[0] = 0</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">17</span>:         diffe[0] = diffe[1] = diffe[2] = 0</pre>
 <pre class='cython code score-0 '>    __pyx_t_9 = 0;
     *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">18</span>:         diffe[1] = 0</pre>
-<pre class='cython code score-0 '>    __pyx_t_9 = 1;
+    __pyx_t_9 = 1;
     *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">19</span>:         diffe[2] = 0</pre>
-<pre class='cython code score-0 '>    __pyx_t_9 = 2;
+    __pyx_t_9 = 2;
     *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">20</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">21</span>:         for ii in range(target.shape[1]):</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">18</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">19</span>:         for ii in range(target.shape[1]):</pre>
 <pre class='cython code score-0 '>    __pyx_t_10 = (__pyx_v_target.shape[1]);
     __pyx_t_11 = __pyx_t_10;
     for (__pyx_t_12 = 0; __pyx_t_12 &lt; __pyx_t_11; __pyx_t_12+=1) {
       __pyx_v_ii = __pyx_t_12;
-</pre><pre class="cython line score-0">&#xA0;<span class="">22</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">23</span>:             last_total = 2000000</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">20</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">21</span>:             last_total = 2000000</pre>
 <pre class='cython code score-0 '>      __pyx_v_last_total = 0x1E8480;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">24</span>:             for iiii in range(3):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">22</span>:             for iiii in range(3):</pre>
 <pre class='cython code score-0 '>      for (__pyx_t_13 = 0; __pyx_t_13 &lt; 3; __pyx_t_13+=1) {
         __pyx_v_iiii = __pyx_t_13;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">25</span>:                 res[iiii] = target[i,ii,iiii] + diffe[iiii]</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">23</span>:                 res[iiii] = target[i,ii,iiii] + diffe[iiii]</pre>
 <pre class='cython code score-0 '>        __pyx_t_9 = __pyx_v_i;
         __pyx_t_14 = __pyx_v_ii;
         __pyx_t_15 = __pyx_v_iiii;
@@ -521,62 +519,79 @@ static PyObject *__pyx_pf_12cython_code3_to_dithe(CYTHON_UNUSED PyObject *__pyx_
         __pyx_t_17 = __pyx_v_iiii;
         *((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_17 * __pyx_v_res.strides[0]) )) = ((*((unsigned char *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target.data + __pyx_t_9 * __pyx_v_target.strides[0]) ) + __pyx_t_14 * __pyx_v_target.strides[1]) ) + __pyx_t_15 * __pyx_v_target.strides[2]) ))) + (*((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_16 * __pyx_v_diffe.strides[0]) ))));
       }
-</pre><pre class="cython line score-0">&#xA0;<span class="">26</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">27</span>:             for iii in range(colors.shape[0]):</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">24</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">25</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">26</span>:             for iii in range(colors.shape[0]):</pre>
 <pre class='cython code score-0 '>      __pyx_t_18 = (__pyx_v_colors.shape[0]);
       __pyx_t_19 = __pyx_t_18;
       for (__pyx_t_20 = 0; __pyx_t_20 &lt; __pyx_t_19; __pyx_t_20+=1) {
         __pyx_v_iii = __pyx_t_20;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">28</span>:                 total = 0</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">27</span>:                 total = 0</pre>
 <pre class='cython code score-0 '>        __pyx_v_total = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">29</span>:                 for iiii in range(3):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">28</span>:                 for iiii in range(3):</pre>
 <pre class='cython code score-0 '>        for (__pyx_t_13 = 0; __pyx_t_13 &lt; 3; __pyx_t_13+=1) {
           __pyx_v_iiii = __pyx_t_13;
-</pre><pre class="cython line score-0">&#xA0;<span class="">30</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">31</span>:                     total += (colors[iii,iiii] - res[iiii]) ** 2</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">29</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">30</span>:                     total += (colors[iii,iiii] - res[iiii]) ** 2</pre>
 <pre class='cython code score-0 '>          __pyx_t_16 = __pyx_v_iii;
           __pyx_t_15 = __pyx_v_iiii;
           __pyx_t_14 = __pyx_v_iiii;
           __pyx_v_total = (__pyx_v_total + __Pyx_pow_long(((long)((*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_16 * __pyx_v_colors.strides[0]) ) + __pyx_t_15 * __pyx_v_colors.strides[1]) ))) - (*((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_14 * __pyx_v_res.strides[0]) ))))), 2));
         }
-</pre><pre class="cython line score-0">&#xA0;<span class="">32</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">33</span>:                 if total &lt; last_total:</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">31</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">32</span>:                 if total &lt; last_total:</pre>
 <pre class='cython code score-0 '>        __pyx_t_21 = ((__pyx_v_total &lt; __pyx_v_last_total) != 0);
         if (__pyx_t_21) {
 /* … */
         }
       }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">34</span>:                     last_total = total</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">33</span>:                     last_total = total</pre>
 <pre class='cython code score-0 '>          __pyx_v_last_total = __pyx_v_total;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">35</span>:                     color_index = iii</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">34</span>:                     color_index = iii</pre>
 <pre class='cython code score-0 '>          __pyx_v_color_index = __pyx_v_iii;
-</pre><pre class="cython line score-0">&#xA0;<span class="">36</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">37</span>:             for iiii in range(3):</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">35</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">36</span>:             for iiii in range(3):</pre>
 <pre class='cython code score-0 '>      for (__pyx_t_13 = 0; __pyx_t_13 &lt; 3; __pyx_t_13+=1) {
         __pyx_v_iiii = __pyx_t_13;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">38</span>:                 target[i,ii,iiii] = colors[color_index,iiii]</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">37</span>:                 target[i,ii,iiii] = colors[color_index,iiii]</pre>
 <pre class='cython code score-0 '>        __pyx_t_14 = __pyx_v_color_index;
         __pyx_t_15 = __pyx_v_iiii;
         __pyx_t_16 = __pyx_v_i;
         __pyx_t_9 = __pyx_v_ii;
         __pyx_t_17 = __pyx_v_iiii;
         *((unsigned char *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_target.data + __pyx_t_16 * __pyx_v_target.strides[0]) ) + __pyx_t_9 * __pyx_v_target.strides[1]) ) + __pyx_t_17 * __pyx_v_target.strides[2]) )) = (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_14 * __pyx_v_colors.strides[0]) ) + __pyx_t_15 * __pyx_v_colors.strides[1]) )));
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">39</span>:                 diffe[iiii] = res[iiii] - colors[color_index,iiii]</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">38</span>:                 if 0 &lt; res[iiii]:</pre>
 <pre class='cython code score-0 '>        __pyx_t_15 = __pyx_v_iiii;
-        __pyx_t_14 = __pyx_v_color_index;
-        __pyx_t_17 = __pyx_v_iiii;
-        __pyx_t_9 = __pyx_v_iiii;
-        *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = ((*((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_15 * __pyx_v_res.strides[0]) ))) - (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_14 * __pyx_v_colors.strides[0]) ) + __pyx_t_17 * __pyx_v_colors.strides[1]) ))));
+        __pyx_t_21 = ((0 &lt; (*((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_15 * __pyx_v_res.strides[0]) )))) != 0);
+        if (__pyx_t_21) {
+/* … */
+          goto __pyx_L16;
+        }
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">39</span>:                     diffe[iiii] = res[iiii] - colors[color_index,iiii]</pre>
+<pre class='cython code score-0 '>          __pyx_t_15 = __pyx_v_iiii;
+          __pyx_t_14 = __pyx_v_color_index;
+          __pyx_t_17 = __pyx_v_iiii;
+          __pyx_t_9 = __pyx_v_iiii;
+          *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = ((*((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_15 * __pyx_v_res.strides[0]) ))) - (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_14 * __pyx_v_colors.strides[0]) ) + __pyx_t_17 * __pyx_v_colors.strides[1]) ))));
+</pre><pre class="cython line score-0">&#xA0;<span class="">40</span>:                 else:</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">41</span>:                     diffe[iiii] = res[iiii] + colors[color_index,iiii]</pre>
+<pre class='cython code score-0 '>        /*else*/ {
+          __pyx_t_17 = __pyx_v_iiii;
+          __pyx_t_14 = __pyx_v_color_index;
+          __pyx_t_15 = __pyx_v_iiii;
+          __pyx_t_9 = __pyx_v_iiii;
+          *((short *) ( /* dim=0 */ (__pyx_v_diffe.data + __pyx_t_9 * __pyx_v_diffe.strides[0]) )) = ((*((short *) ( /* dim=0 */ (__pyx_v_res.data + __pyx_t_17 * __pyx_v_res.strides[0]) ))) + (*((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_colors.data + __pyx_t_14 * __pyx_v_colors.strides[0]) ) + __pyx_t_15 * __pyx_v_colors.strides[1]) ))));
+        }
+        __pyx_L16:;
       }
     }
   }
-</pre><pre class="cython line score-0">&#xA0;<span class="">40</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">41</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">42</span>: </pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">42</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">43</span>: </pre>
-<pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">44</span>:     return target</pre>
+<pre class="cython line score-0">&#xA0;<span class="">44</span>: </pre>
+<pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">45</span>:     return target</pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_target, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)</span>
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_target, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
