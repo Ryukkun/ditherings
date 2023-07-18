@@ -8,6 +8,7 @@
 | 誤差拡散 | cython.1 | x | x |
 | 誤差拡散 | cython.2 | 0.090 Sec | 1.23 Sec |
 | 誤差拡散.改 | cython.3 | 0.064 Sec | 1.15 Sec |
+| 誤差拡散.改 | java.1 | 0.27 Sec | 2.6 Sec |
 
 ## 画像
 元画像
