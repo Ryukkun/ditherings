@@ -8,7 +8,6 @@ __pycache__/
 *.html
 *.c
 .DS_Store
-out.png
 # Distribution / packaging
 .Python
 build/
