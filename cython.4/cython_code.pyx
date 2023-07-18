@@ -1,7 +1,7 @@
 #cython : language_level=3, boundscheck=False, wraparound=False, initializedcheck=False, cdivision=True
 
 
-cpdef inline to_dithe(cnp.ndarray[unsigned char, ndim=3] target, unsigned char[:,:] colors):
+cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
 
     cdef:
         int total
