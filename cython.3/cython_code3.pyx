@@ -9,8 +9,8 @@ cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
         int total
         int last_total
         int color_index
-        short[:] diffe = np.zeros(3, dtype=np.int16)
-        short[:] res = np.zeros(3, dtype=np.int16)
+        short[:] diffe = np.empty(3, dtype=np.int16)
+        short[:] res = np.empty(3, dtype=np.int16)
 
 
     for i in range(target.shape[0]):
