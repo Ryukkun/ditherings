@@ -23,11 +23,11 @@ public class Main {
         long start_time = System.currentTimeMillis();
 
         for (int tindex = 0; tindex < xxyy; tindex++){
-            if (tindex%xx == 0){
-                diffe[0] = 0;
-                diffe[1] = 0;
-                diffe[2] = 0;
-            }
+            // if (tindex%xx == 0){
+            //     diffe[0] = 0;
+            //     diffe[1] = 0;
+            //     diffe[2] = 0;
+            // }
 
             res[0] = (target[tindex] >> 16 & 0xff) + diffe[0];
             res[1] = (target[tindex] >> 8 & 0xff) + diffe[1];
