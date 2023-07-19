@@ -1,18 +1,20 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.Process;
 import java.lang.Runtime;
 
 
 public class Ffmpeg {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException, InterruptedException {
+        String line2;
+        String fpath = "\"/Users/yuma/Desktop/Git_Hub/ditherings/target.gif\"";
         
-        fpath = "D:/Desktop/GIt Hub/ditherings/target.jpg";
-        Process p = Runtime.getRuntime().exec("ffmpeg -i "+fpath+" -");
-        var buf = new BufferedReader( new InputStreamReader( p.getInputStream() ) ); 
+        Process p;
 
-        while( ( line = buf.readLine() ) != null ){
-            System.out.println( line );
-        }
+        p = new ProcessBuilder("ffmpeg -nostdin -i "+fpath+" -f rawvideo -vcodec rawvideo -an -pix_fmt rgb24 -")
+        .redirectError(ProcessBuilder.Redirect.INHERIT)
+        .start();
+        System.out.print(p.getInputStream());
     }
 }
