@@ -6,7 +6,8 @@ import pathlib
 import os
 
 os.chdir(pathlib.Path(__file__).parent)
-target_path = "../target.jpg"
+#target_path = "../target.jpg"
+target_path = "../targetRGB.png"
 
 target:np.ndarray = cv2.imread(target_path)
 

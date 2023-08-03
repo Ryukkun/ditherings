@@ -10,7 +10,7 @@
 | 誤差拡散 | [cython.2](cython.2/) | 0.090 Sec | 1.23 Sec |
 | 誤差拡散.Mk1 | [cython.3](cython.3/) | 0.064 Sec | 1.15 Sec |
 | 誤差拡散.Mk1 | [java.1](java.1/) | 0.15 Sec | 2.36 Sec |
-| 誤差拡散.Mk2 | [cython.5](cython.5/) | 0.038 Sec | 0.033 Sec |
+| 誤差拡散.Mk2 | [cython.5](cython.5/) | 0.045 Sec | 0.029 Sec |
 
 
 

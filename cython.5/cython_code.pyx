@@ -16,6 +16,11 @@ cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
         short[:] diffe = np.empty(3, dtype=np.int16)
         short[:] res = np.empty(3, dtype=np.int16)
         int iii
+        int row_ = 2
+        int rowDif = 128 / row_
+        int row = 256 / row_ + rowDif
+        int row2 = row * row
+        int row3 = row2 * row
 
     print("colors_")
 
@@ -28,11 +33,8 @@ cpdef inline to_dithe(unsigned char[:,:,:] target, unsigned char[:,:] colors):
                 res[iiii] = target[i,ii,iiii] + diffe[iiii]
 
 
-            #iii = res[0] + (res[1]*256) + (res[2]*65536)
-            #if 0 <= iii < 16777216 and 0 <= res[0] and 0 <= res[1] and 0 <= res[2]:
-            #    color_index = colors_[iii]
-            iii = (res[0]>>1) + (res[1]>>1<<7) + (res[2]>>1<<14)
-            if 0 <= iii < 2097152 and 0 <= res[0] and 0 <= res[1] and 0 <= res[2]:
+            iii = ((res[0]+rowDif)>>1) + ((res[1]+rowDif>>1)*row) + ((res[2]+rowDif>>1)*row2)
+            if -rowDif < res[0] and -rowDif < res[1] and -rowDif < res[2]:
                 color_index = colors_[iii]
             else:
                 color_index = nearest_color_index(res[0], res[1], res[2], colors)
@@ -58,28 +60,25 @@ cpdef inline calc_color(unsigned char[:,:] colors):
 
     cdef:
         int r, g, b
-        #unsigned char[:] byte_ = np.empty(16777216, dtype=np.uint8)
-        unsigned char[:] byte_ = np.empty(2097152, dtype=np.uint8)
         int rr, gg, bb
+        int row_ = 2
+        int rowDif = 128 / row_
+        int row = 256 / row_ + rowDif
+        int row2 = row * row
+        int row3 = row2 * row
+        unsigned char[:] byte_ = np.empty(row3, dtype=np.uint8)
     
-#    for r in range(256):
-#
-#        for g in range(256):
-#
-#            for b in range(256):
-#
-#                byte_[r + (g * 256) + (b * 65536)] = nearest_color_index(r, g, b, colors)
 
-    for r in range(128):
-        rr = r*2
+    for r in range(row):
+        rr = r*row_-rowDif
 
-        for g in range(128):
-            gg = g*2
+        for g in range(row):
+            gg = g*row_-rowDif
 
-            for b in range(128):
-                bb = b*2
+            for b in range(row):
+                bb = b*row_-rowDif
 
-                byte_[r + (g * 128) + (b * 16384)] = nearest_color_index(rr, gg, bb, colors)
+                byte_[r + (g * row) + (b * row2)] = nearest_color_index(rr, gg, bb, colors)
 
     return byte_
 
