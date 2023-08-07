@@ -38,4 +38,4 @@
 | 誤差拡散 | ![8誤差拡散](image/8color/誤差拡散.png) | ![1.12.2誤差拡散](image/1.12.2/誤差拡散.png) |
 | 誤差拡散.Mk1 | ![8誤差拡散.Mk1](image/8color/誤差拡散.Mk1.png) | ![1.12.2誤差拡散.Mk1](image/1.12.2/誤差拡散.Mk1.png) |
 | 誤差拡散.Mk2 | ![8誤差拡散.Mk2](image/8color/誤差拡散.Mk2.png) | ![1.12.2誤差拡散.Mk2](image/1.12.2/誤差拡散.Mk2.png) |
-| 誤差拡散.Mk2 | ![8誤差拡散.Mk2](image/8color/誤差拡散.Mk3.png) | ![1.12.2誤差拡散.Mk2](image/1.12.2/誤差拡散.Mk3.png) |
+| 誤差拡散.Mk3 | ![8誤差拡散.Mk3](image/8color/誤差拡散.Mk3.png) | ![1.12.2誤差拡散.Mk3](image/1.12.2/誤差拡散.Mk3.png) |
