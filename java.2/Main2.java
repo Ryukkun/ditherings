@@ -4,11 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public class Main2 {
 
@@ -33,47 +28,23 @@ public class Main2 {
         File f =  new File( "./target.jpg");
         //File f =  new File( "./targetRGB.png");
 
-        ExecutorService exe = Executors.newFixedThreadPool(10);
-
         BufferedImage img = ImageIO.read( f);
         int yy = img.getHeight(), xx = img.getWidth();
         int[] target = img.getRGB(0, 0, xx, yy, null, 0, xx);
         long start_time = System.currentTimeMillis();
-        List<kuso> tasks = new ArrayList<>();
 
-        for (int loop=0; loop < 9; loop++){
-            exe.submit(() -> {
-                converter(target, xx, yy);
-            });
-        }
-        exe.shutdown();
-        exe.awaitTermination(10, TimeUnit.SECONDS);
+        for (int loop=0; loop < 1; loop++){
+                target = converter(target, xx, yy);
+            };
         // int[] res = converter(target, xx, yy);
         //exe.invokeAll(tasks, 60, TimeUnit.SECONDS);
         System.out.print(System.currentTimeMillis() - start_time);
         
-        //img.setRGB(0, 0, xx, yy, res, 0, xx);
+        img.setRGB(0, 0, xx, yy, target, 0, xx);
         
-        //ImageIO.write(img, "png", new File( "./test.jpg" ) );
+        ImageIO.write(img, "png", new File( "./test.jpg" ) );
     }
 
-
-    public static class kuso implements Callable<int[]> {
-        private int xx;
-        private int yy;
-        private int[] target;
-
-        public kuso(int[] target, int xx, int yy){
-            this.target = target;
-            this.xx = xx;
-            this.yy = yy;
-        }
-
-        @Override
-        public int[] call(){
-            return converter(target, xx, yy);
-        }
-    }
 
     private static int[] converter(int[] target, int xx, int yy){
         int tindex = -1;
