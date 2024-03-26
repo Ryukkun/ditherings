@@ -33,7 +33,7 @@ public class Main2 {
         int[] target = img.getRGB(0, 0, xx, yy, null, 0, xx);
         long start_time = System.currentTimeMillis();
 
-        for (int loop=0; loop < 1; loop++){
+        for (int loop=0; loop < 100; loop++){
                 target = converter(target, xx, yy);
             };
         // int[] res = converter(target, xx, yy);
@@ -50,6 +50,8 @@ public class Main2 {
         int tindex = -1;
         int[] res = {0,0,0};
         int[] diffe = {0,0,0};
+        int max = rightLimit;
+        int min = leftLimit;
 
         for (int y = 0; y < yy; y++){
             diffe[0] = 0;
@@ -58,24 +60,22 @@ public class Main2 {
 
             for (int x = 0; x < xx; x++){
                 tindex++;
-                res[0] = (target[tindex] >> 16 & 0xff) + diffe[0];
-                res[1] = (target[tindex] >> 8 & 0xff) + diffe[1];
-                res[2] = (target[tindex] & 0xff) + diffe[2];
+                // res[0] = (target[tindex] >> 16 & 0xff) + diffe[0];
+                // res[1] = (target[tindex] >> 8 & 0xff) + diffe[1];
+                // res[2] = (target[tindex] & 0xff) + diffe[2];
+                res[0] = Math.max(min, Math.min(max, target[tindex] >> 16 & 0xff) + diffe[0]);
+                res[1] = Math.max(min, Math.min(max, target[tindex] >> 8 & 0xff) + diffe[1]);
+                res[2] = Math.max(min, Math.min(max, target[tindex] & 0xff) + diffe[2]);
                 //System.out.print("b:"+b+" g:"+g+" r:"+r+" bgr:"+rgb);
 
-                short color_index = (leftLimit <= res[0] && res[0] < rightLimit && leftLimit <= res[1] && res[1] < rightLimit && leftLimit <= res[2] && res[2] < rightLimit)
-                    ? colors_[ ((res[0]>>1)+DIV_oneSideDif) + (((res[1]>>1)+DIV_oneSideDif)*DIV_Row) + (((res[2]>>1)+DIV_oneSideDif)*DIV_Row2)]
-                    : nearest_color_index(res[0], res[1], res[2], colors);
+                // short color_index = (leftLimit <= res[0] && res[0] < rightLimit && leftLimit <= res[1] && res[1] < rightLimit && leftLimit <= res[2] && res[2] < rightLimit)
+                //     ? colors_[ ((res[0]>>1)+DIV_oneSideDif) + (((res[1]>>1)+DIV_oneSideDif)*DIV_Row) + (((res[2]>>1)+DIV_oneSideDif)*DIV_Row2)]
+                //     : nearest_color_index(res[0], res[1], res[2], colors);
+                short color_index = colors_[ ((res[0]>>1)+DIV_oneSideDif) + (((res[1]>>1)+DIV_oneSideDif)*DIV_Row) + (((res[2]>>1)+DIV_oneSideDif)*DIV_Row2)];
                 
                 target[tindex] = colors[color_index][0] << 16 | colors[color_index][1] << 8 | colors[color_index][2];
                 for (int i = 0; i < 3; i++){
-                    diffe[i] = 0 < res[i] ? res[i] - colors[color_index][i] : res[i] + colors[color_index][i];
-                }
-
-                if (255 < diffe[0] || 255 < diffe[1] || 255 < diffe[2]){
-                    diffe[0] >>= 1;
-                    diffe[1] >>= 1;
-                    diffe[2] >>= 1;
+                    diffe[i] = res[i] - colors[color_index][i];
                 }
             }
         
